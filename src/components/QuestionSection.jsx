@@ -7,7 +7,7 @@ const QuestionSection = ({ mathQuestions, onQuestionSubmit }) => {
 
   return (
     <div>
-      <hr />
+      <hr className="w-24" />
 
       <form className="mt-3" onSubmit={onQuestionSubmit}>
         {mathQuestions.map((item) => (

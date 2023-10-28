@@ -4,13 +4,15 @@ import AddCharBtn from "./AddCharBtn";
 
 const AddQuestion = ({ question, onModChar, onAddQuestion }) => {
   return (
-    <div className="mb-5">
+    <div className="mb-4">
       <form onSubmit={onAddQuestion}>
-        <label htmlFor="addQuestion">Add a question</label>
+        <label htmlFor="addQuestion" className="text-slate-700">
+          Add a question
+        </label>
         <br />
         <input
           id="addQuestion"
-          className="border-2 border-slate-950 mt-1 mr-1 rounded-sm"
+          className="max-w-[33vw] border-2 border-slate-950 mt-1 mr-1 rounded-sm"
           type="text"
           value={question}
           readOnly
@@ -37,11 +39,36 @@ const AddQuestion = ({ question, onModChar, onAddQuestion }) => {
         <AddCharBtn onModChar={onModChar}>9</AddCharBtn>
         <AddCharBtn onModChar={onModChar}>0</AddCharBtn>
         <br />
-        <AddCharBtn onModChar={onModChar}>+</AddCharBtn>
-        <AddCharBtn onModChar={onModChar}>-</AddCharBtn>
-        <AddCharBtn onModChar={onModChar}>*</AddCharBtn>
-        <AddCharBtn onModChar={onModChar}>/</AddCharBtn>
-        <AddCharBtn onModChar={onModChar}>⌫</AddCharBtn>
+        <AddCharBtn
+          color="bg-teal-200 hover:bg-teal-300 active:bg-teal-400"
+          onModChar={onModChar}
+        >
+          +
+        </AddCharBtn>
+        <AddCharBtn
+          color="bg-teal-200 hover:bg-teal-300 active:bg-teal-400"
+          onModChar={onModChar}
+        >
+          -
+        </AddCharBtn>
+        <AddCharBtn
+          color="bg-teal-200 hover:bg-teal-300 active:bg-teal-400"
+          onModChar={onModChar}
+        >
+          *
+        </AddCharBtn>
+        <AddCharBtn
+          color="bg-teal-200 hover:bg-teal-300 active:bg-teal-400"
+          onModChar={onModChar}
+        >
+          /
+        </AddCharBtn>
+        <AddCharBtn
+          color="bold bg-red-400 hover:bg-red-500 active:bg-red-600"
+          onModChar={onModChar}
+        >
+          ⌫
+        </AddCharBtn>
       </div>
     </div>
   );

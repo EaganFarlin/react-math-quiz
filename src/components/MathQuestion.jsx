@@ -6,17 +6,14 @@ const MathQuestion = ({ question }) => {
   }
 
   return (
-    <div className="flex flex-col max-w-[33vw]">
-      <label
-        htmlFor={question.id}
-        className="text-slate-700 max-w-full break-words"
-      >
+    <div>
+      <label htmlFor={question.id} className="text-slate-700 break-words">
         {`${question.nums[0]} ${question.operator} ${question.nums[1]} =`}
       </label>
       <br />
       <input
         id={question.id}
-        className="border-2 border-slate-950 rounded-sm"
+        className="max-w-[33vw] border-2 border-slate-950 rounded-sm"
         type="text"
       />
       <br />

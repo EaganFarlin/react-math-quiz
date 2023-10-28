@@ -120,13 +120,24 @@ export default function MathQuiz() {
 
     mathQuestions.map((item) => {
       if (Number(document.getElementById(item.id).value) === item.answer) {
+        document.querySelector(
+          `label[for='${item.id}']`
+        ).innerHTML = `${item.nums[0]} ${item.operator} ${item.nums[1]} =`;
+
+        document
+          .getElementById(item.id)
+          .classList.remove("bg-red-500", "text-white");
         document
           .getElementById(item.id)
           .classList.add("bg-green-500", "text-white");
       } else {
         document.querySelector(
           `label[for='${item.id}']`
-        ).textContent = `${item.nums[0]} ${item.operator} ${item.nums[1]} = ${item.answer}`;
+        ).innerHTML = `${item.nums[0]} ${item.operator} ${item.nums[1]} = <span class="font-bold">${item.answer}</span>`;
+
+        document
+          .getElementById(item.id)
+          .classList.remove("bg-green-500", "text-white");
         document
           .getElementById(item.id)
           .classList.add("bg-red-500", "text-white");
@@ -135,21 +146,25 @@ export default function MathQuiz() {
   };
 
   return (
-    <div className="font-sans px-[33vw] py-[2%]">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold underline mb-2">Math Quiz</h1>
-        <AddQuestion
-          question={question}
-          operators={operators}
-          onModChar={onModChar}
-          onAddQuestion={onAddQuestion}
-        />
-        <QuestionSection
-          mathQuestions={mathQuestions}
-          onQuestionSubmit={onQuestionSubmit}
-        />
+    <div className="min-w-full min-h-[100vh] flex justify-center items-center py-[2%] font-sans">
+      <div className="max-w-xs">
+        <div className="relative left-[50%] translate-x-[-50%] mb-8">
+          <div>
+            <h1 className="text-4xl font-bold underline mb-2">Math Quiz</h1>
+          </div>
+          <AddQuestion
+            question={question}
+            operators={operators}
+            onModChar={onModChar}
+            onAddQuestion={onAddQuestion}
+          />
+          <QuestionSection
+            mathQuestions={mathQuestions}
+            onQuestionSubmit={onQuestionSubmit}
+          />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

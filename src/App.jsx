@@ -146,7 +146,7 @@ export default function MathQuiz() {
   };
 
   return (
-    <div className="min-w-full min-h-[100vh] min-h-[100dvh] flex justify-center items-center py-[2%] font-sans">
+    <div className="min-w-full min-h-[100vh] min-h-[100dvh] flex justify-center items-center py-[5vh] font-sans">
       <div className="max-w-xs">
         <div className="relative left-[50%] translate-x-[-50%] mb-8">
           <div>

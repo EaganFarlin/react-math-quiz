@@ -12,7 +12,7 @@ const AddQuestion = ({ question, onModChar, onAddQuestion }) => {
         <br />
         <input
           id="addQuestion"
-          className="max-w-[33vw] border-2 border-slate-950 mt-1 mr-1 rounded-sm"
+          className="border-2 border-slate-950 mt-1 mr-1 rounded-sm"
           type="text"
           value={question}
           readOnly
@@ -64,7 +64,7 @@ const AddQuestion = ({ question, onModChar, onAddQuestion }) => {
           /
         </AddCharBtn>
         <AddCharBtn
-          color="bold bg-red-400 hover:bg-red-500 active:bg-red-600"
+          color="bg-red-400 hover:bg-red-500 active:bg-red-600"
           onModChar={onModChar}
         >
           ⌫
